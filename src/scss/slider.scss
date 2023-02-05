@@ -43,7 +43,8 @@
 
   @media (max-width: 750px) {
     width: 100%;
-    padding: 50px;
+    padding: 50px 0;
+    margin-top: -4px;
   }
   @media (max-width: 451px) {
     padding: 20px;
@@ -75,6 +76,10 @@
       font-size: 0.67rem;
     }
   }
+  @media (max-width: 750px) {
+    text-align: center;
+  }
+
   @media (max-width: 545px) {
     max-width: 95%;
   }

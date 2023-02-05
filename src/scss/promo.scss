@@ -19,6 +19,26 @@
     left: 0;
   }
 
+  @media (max-height: 667px) {
+    padding: 180px 0 85px;
+  }
+
+  @media (max-width: $md1) {
+    padding-top: 195px;
+  }
+
+  @media (max-width: $md2) {
+    padding-top: 215px;
+  }
+
+  @media (max-width: 751px) {
+    padding-top: 240px;
+  }
+
+  @media (max-width: 586px) {
+    padding-top: 200px;
+  }
+
   @media (max-width: 505px) {
     padding: 190px 0 70px;
   }
@@ -29,10 +49,6 @@
 
   @media (max-width: 360px) {
     padding-top: 160px;
-  }
-
-  @media (max-height: 667px) {
-    padding: 175px 0 90px;
   }
 }
 

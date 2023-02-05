@@ -2,6 +2,8 @@
   padding: 0;
 }
 .gallery-wrap {
+  max-width: 1870px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
   grid-template-rows: repeat(2, 340px);
@@ -23,24 +25,24 @@
     grid-template-rows: repeat(2, 250px);
   }
 
-  @media (max-width: 754px) {
+  @media (max-width: 750px) {
     grid-template-rows: repeat(4, 300px);
   }
 
   @media (max-width: 628px) {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     grid-template-rows: repeat(4, 200px);
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(161px, 1fr));
     grid-template-rows: repeat(4, 144px);
   }
 
-  //   @media (max-width: 320px) {
-  //     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  //     grid-template-rows: repeat(2, 144px);
-  //   }
+  @media (max-width: 325px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-rows: repeat(4, 144px);
+  }
 }
 
 .gallery-item {
@@ -66,10 +68,12 @@
     background-color: rgba(255, 67, 67, 0.8);
     border: 2px solid #ffffff;
     color: #ffffff;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    opacity: 0;
+    transition: 0.3s;
 
     h3 {
       @include fonts(Raleway, 900, 24px, 28px);
@@ -83,7 +87,7 @@
 
   &:hover {
     .gallery-item-hover {
-      display: flex;
+      opacity: 1;
     }
   }
   &:active {
@@ -95,6 +99,30 @@
   &:first-child img {
     @media (max-width: 628px) {
       object-position: bottom;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    &:nth-child(-n + 2) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1145px) {
+    &:nth-child(-n + 2) {
+      display: block;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    &:nth-child(-n + 2) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 750px) {
+    &:nth-child(-n + 2) {
+      display: block;
     }
   }
 }

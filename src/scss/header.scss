@@ -51,20 +51,57 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
+  &__item {
+    position: relative;
+  }
+
   &__link {
     @include fonts("Raleway", 700, 13px, 15px);
     color: $color2;
     text-transform: uppercase;
-    padding: 0 0 40px;
     transition: 0.2s;
   }
 
-  &__link:hover {
-    border-bottom: 3px solid #babbc5;
+  &__link:active {
+    color: #e71414;
   }
 
-  &__link:active {
-    border-bottom: 3px solid #e71414;
+  &__link:hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 285%;
+    background-color: #babbc5;
+    transition: 0.3s;
+
+    @media (max-width: $md1) {
+      top: 310%;
+    }
+
+    @media (max-width: $md2) {
+      top: 345%;
+    }
+  }
+
+  &__link:active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 285%;
+    background-color: #e71414;
+    transition: 0.3s;
+
+    @media (max-width: $md1) {
+      top: 310%;
+    }
+
+    @media (max-width: $md2) {
+      top: 345%;
+    }
   }
 
   @media (max-width: 992px) {
