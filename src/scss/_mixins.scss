@@ -1,0 +1,145 @@
+@mixin fonts($ff, $fw, $fs, $lh) {
+  font-family: $ff, sans-serif;
+  font-weight: $fw;
+  font-size: calc($fs/$main_font_size * 1rem);
+  line-height: calc($lh / $fs);
+}
+
+@mixin btn() {
+  max-width: 30.83%;
+  background-color: $main_color;
+  border: 1px solid $main_color;
+  text-align: center;
+}
+
+@mixin btn_hover() {
+  background: #e71414;
+}
+
+@mixin btn_active() {
+  background: $main_color;
+  box-shadow: 4px 4px 30px $main_color;
+}
+
+@mixin work_hover() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 67, 67, 0.8);
+  border: 2px solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin work_active() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(185, 12, 12, 0.8);
+  border: 2px solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin card-icon() {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+@mixin card-title() {
+  @include fonts("Raleway", 900, 24px, 28px);
+  text-transform: uppercase;
+  color: $color3;
+  text-align: center;
+}
+
+@mixin card-desc() {
+  @include fonts("Raleway", 400, 18px, 21px);
+  color: $color4;
+  text-align: center;
+}
+
+@mixin person-card-img() {
+  width: 260px;
+  height: 260px;
+  overflow: hidden;
+}
+
+@mixin person-card-title() {
+  @include fonts(Raleway, 700, 24px, 28px);
+  color: $color3;
+  text-transform: capitalize;
+}
+
+@mixin person-card-job() {
+  @include fonts(Raleway, 400, 18px, 21px);
+  color: $main_color;
+  text-transform: uppercase;
+}
+
+@mixin person-card-desc() {
+  @include fonts(Raleway, 400, 18px, 21px);
+  color: $color4;
+}
+
+@mixin person-card-link() {
+  width: 39px;
+  height: 39px;
+  font-size: 18px;
+  color: $color-link;
+  border: 1px solid $color-link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin slider-title() {
+  @include fonts(Cardo, 400, 36px, 49px);
+  font-style: italic;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+@mixin slider-desc() {
+  @include fonts(Raleway, 700, 13px, 15px);
+  font-style: normal;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+@mixin download-title() {
+  @include fonts(Raleway, 500, 30px, 30px);
+  font-style: normal;
+  text-align: center;
+  color: #000000;
+}
+
+@mixin download-subtitle() {
+  @include fonts(Raleway, 700, 18px, 21px);
+  text-transform: uppercase;
+  text-align: center;
+  color: #000000;
+}
+
+@mixin info-title() {
+  @include fonts(Raleway, 700, 18px, 21px);
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+@mixin info-desc() {
+  @include fonts(Raleway, 400, 18px, 21px);
+  text-align: center;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+@mixin footer-text() {
+  @include fonts(Raleway, 400, 14px, 16px);
+  text-align: center;
+  text-transform: capitalize;
+  color: #808080;
+}

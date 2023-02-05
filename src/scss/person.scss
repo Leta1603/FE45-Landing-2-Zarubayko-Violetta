@@ -1,0 +1,124 @@
+.person {
+  padding-bottom: 55px;
+  @media (max-width: 585px) {
+    padding: 80px 0 60px;
+  }
+}
+
+.person-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  @media (max-width: $md2) {
+    justify-content: space-around;
+  }
+}
+.person-card {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  margin: 0 15px;
+
+  @media (max-width: 1200px) {
+    width: 210px;
+  }
+
+  @media (max-width: $md2) {
+    width: 260px;
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    width: 85%;
+    text-align: center;
+    &:not(:nth-last-child(-n + 1)) {
+      margin-bottom: 50px;
+    }
+  }
+}
+.person-card__img {
+  @include person-card-img;
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 1200px) {
+    width: 210px;
+    height: 210px;
+  }
+
+  @media (max-width: $md2) {
+    width: 260px;
+    height: 260px;
+  }
+
+  @media (max-width: 580px) {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 30px;
+  }
+}
+.person-card__name {
+  @include person-card-title;
+  margin-bottom: 6px;
+}
+.person-card__job {
+  @include person-card-job;
+  margin-bottom: 18px;
+}
+.person-card__desc {
+  @include person-card-desc;
+  margin-bottom: 38px;
+  flex: 1 1 auto;
+}
+
+.person-card__link {
+  display: flex;
+
+  a {
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    justify-content: center;
+  }
+}
+
+.fa-brands {
+  @include person-card-link;
+}
+
+.fa-brands:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.fa-facebook-f:hover {
+  color: #3b5998;
+  border: 1px solid #3b5998;
+}
+
+.fa-twitter:hover {
+  color: #00acee;
+  border: 1px solid #00acee;
+}
+
+.fa-linkedin:hover {
+  color: #0e76a8;
+  border: 1px solid #0e76a8;
+}

@@ -1,0 +1,93 @@
+.promo {
+  background-image: url("../img/bg_promo.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  padding: 230px 0 120px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 43, 73, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: 505px) {
+    padding: 190px 0 70px;
+  }
+
+  @media (max-width: 388px) {
+    padding: 175px 0 60px;
+  }
+
+  @media (max-width: 360px) {
+    padding-top: 160px;
+  }
+
+  @media (max-height: 667px) {
+    padding: 175px 0 90px;
+  }
+}
+
+.promo-text {
+  margin: 0 auto 80px;
+  text-align: center;
+  &__title {
+    @include fonts("Raleway", 900, 64px, 75px);
+    color: $color2;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+
+    @media (max-width: 751px) {
+      font-size: 36px;
+    }
+  }
+
+  &__desc {
+    @include fonts("Raleway", 400, 24px, 28px);
+    color: $color2;
+  }
+
+  @media (max-width: 751px) {
+    margin-bottom: 60px;
+    font-size: 14px;
+  }
+
+  @media (max-width: 360px) {
+    margin-bottom: 50px;
+  }
+}
+
+.promo-btn {
+  @include btn();
+  margin: auto;
+  transition: 0.3s;
+  a {
+    @include fonts("Raleway", 900, 24px, 80px);
+    color: $color2;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    @include btn_hover;
+  }
+
+  &:active {
+    @include btn_active;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 40%;
+  }
+
+  @media (max-width: 587px) {
+    max-width: 87.5%;
+  }
+}

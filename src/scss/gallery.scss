@@ -1,0 +1,100 @@
+.gallery {
+  padding: 0;
+}
+.gallery-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-rows: repeat(2, 340px);
+
+  a {
+    border: 1px solid #ffffff;
+  }
+
+  @media (max-width: 1144px) {
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-template-rows: repeat(2, 230px);
+  }
+  @media (max-width: 1130px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(2, 230px);
+  }
+
+  @media (max-width: 1007px) {
+    grid-template-rows: repeat(2, 250px);
+  }
+
+  @media (max-width: 754px) {
+    grid-template-rows: repeat(4, 300px);
+  }
+
+  @media (max-width: 628px) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-rows: repeat(4, 200px);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-rows: repeat(4, 144px);
+  }
+
+  //   @media (max-width: 320px) {
+  //     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  //     grid-template-rows: repeat(2, 144px);
+  //   }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+
+  &-hover {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(255, 67, 67, 0.8);
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+      @include fonts(Raleway, 900, 24px, 28px);
+      text-transform: uppercase;
+      margin-bottom: 37px;
+    }
+    span {
+      display: block;
+    }
+  }
+
+  &:hover {
+    .gallery-item-hover {
+      display: flex;
+    }
+  }
+  &:active {
+    .gallery-item-hover {
+      background-color: rgba(185, 12, 12, 0.8);
+    }
+  }
+
+  &:first-child img {
+    @media (max-width: 628px) {
+      object-position: bottom;
+    }
+  }
+}

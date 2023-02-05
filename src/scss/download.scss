@@ -1,0 +1,44 @@
+.download {
+  @media (max-width: 585px) {
+    padding: 40px 0 60px;
+  }
+}
+.download-title {
+  @include download-title();
+  margin-bottom: 35px;
+}
+
+.download-subtitle {
+  @include download-subtitle();
+  margin-bottom: 48px;
+}
+
+.download-btn {
+  @include btn();
+  margin: auto;
+  transition: 0.3s;
+  a {
+    @include fonts("Raleway", 900, 24px, 80px);
+    color: $color2;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    @include btn_hover;
+  }
+
+  &:active {
+    @include btn_active;
+  }
+
+  @media (max-width: 700px) {
+    max-width: 40%;
+  }
+
+  @media (max-width: 587px) {
+    max-width: 70%;
+  }
+  @media (max-width: 400px) {
+    max-width: 87%;
+  }
+}
