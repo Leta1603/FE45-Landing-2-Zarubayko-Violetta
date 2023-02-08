@@ -1,3 +1,13 @@
+const burgerMenu = document.querySelector(".burger-menu");
+if (burgerMenu) {
+  const nav = document.querySelector(".nav");
+  burgerMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle("_lock");
+    burgerMenu.classList.toggle("_active");
+    nav.classList.toggle("_active");
+  });
+}
+
 new Swiper(".swiper", {
   //Стрелки
   navigation: {
